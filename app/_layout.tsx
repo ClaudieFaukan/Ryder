@@ -1,12 +1,15 @@
 import "../global.css";
 
-import { SplashScreen, Stack } from "expo-router";
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { ClerkProvider } from '@clerk/clerk-expo';
+import { tokenCache } from "@clerk/clerk-expo/token-cache";
 import { useFonts } from "expo-font";
+import { SplashScreen, Stack } from "expo-router";
 
 export const unstable_settings = {
   anchor: '(tabs)',
 };
+
 SplashScreen._internal_preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -22,10 +25,12 @@ export default function RootLayout() {
     });
 
   return (
+    <ClerkProvider tokenCache={tokenCache}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(root)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
       </Stack>
+    </ClerkProvider>
   );
 }
