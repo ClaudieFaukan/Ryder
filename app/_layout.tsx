@@ -1,7 +1,8 @@
+import "../global.css";
 
-import {SplashScreen, Stack} from 'expo-router';
+import { SplashScreen, Stack } from "expo-router";
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import {useFonts} from "expo-font";
+import { useFonts } from "expo-font";
 
 export const unstable_settings = {
   anchor: '(tabs)',
