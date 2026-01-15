@@ -6,8 +6,8 @@ import { useAuth } from '@clerk/clerk-expo'
 const Layout = () => {
 
     return   <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack>
 
 }
 
