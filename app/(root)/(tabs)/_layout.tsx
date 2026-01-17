@@ -1,6 +1,6 @@
-import {Tabs} from "expo-router";
-import {Image, ImageSourcePropType, View} from "react-native";
-import {icons} from "@/constants";
+import { icons } from "@/constants";
+import { Tabs } from "expo-router";
+import { Image, ImageSourcePropType, View } from "react-native";
 
 const TabIcon = ({source,focused}:{source: ImageSourcePropType,focused:boolean}) => (
     <View className={`flex flex-row items-center justify-center rounded-full`}>

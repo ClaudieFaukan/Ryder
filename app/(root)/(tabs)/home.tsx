@@ -1,5 +1,5 @@
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
-import { Link } from 'expo-router'
+import {Link, router} from 'expo-router'
 import {ActivityIndicator, FlatList, Image, Text, TouchableOpacity, View} from 'react-native'
 import {SignOutButton} from "@/components/SignOutButton";
 import {SafeAreaView} from "react-native-safe-area-context";
@@ -123,7 +123,10 @@ export default function Home() {
 
     const [hasPersmissions,setHasPermissions] = useState<boolean>(false)
     const handleSignOut = () => {}
-    const handleDestination = () => {}
+    const handleDestination = (location:{latitude:number,longitude:number,address:string}) => {
+        setDestinationLocation(location);
+        router.push("/(root)/find-ride");
+    }
 
     useEffect(() => {
         const requestLocation = async () =>{
